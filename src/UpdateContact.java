@@ -23,7 +23,13 @@ public class UpdateContact extends javax.swing.JInternalFrame {
         ContactId = System.getProperty("ContactId");
         Name = System.getProperty("Name");
         Name2= newname;
+        Contacts m = DBManager.getContact(Name,newname);
         txtName.setText(Name2);
+        
+            txtCity.setText(m.getCity());
+            txtEmail.setText(m.getEmail());
+            txtMobile.setText(m.getMobileNumber());
+           
         ArrayList<Category> list = DBManager.getAllCategory();
         model = (DefaultComboBoxModel) jComboBoxCategory.getModel();
         for (Category c : list) {

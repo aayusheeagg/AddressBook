@@ -5,8 +5,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 
-public class ViewFullInfo extends javax.swing.JInternalFrame {
-
+public class ViewFullInfo extends javax.swing.JInternalFrame {  
+    
     
     Contacts s;
     String ContactId, Name,Name1;

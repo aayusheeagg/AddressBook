@@ -121,6 +121,11 @@ public class AddContact extends javax.swing.JInternalFrame {
         jButtonReset.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jButtonReset.setText("Reset");
         jButtonReset.setBorder(null);
+        jButtonReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonResetActionPerformed(evt);
+            }
+        });
 
         jLabelDOB.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jLabelDOB.setText("Date Of Birth:");
@@ -372,6 +377,10 @@ public class AddContact extends javax.swing.JInternalFrame {
 
 
     }//GEN-LAST:event_btnBrowseActionPerformed
+
+    private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
+        resetForm();
+    }//GEN-LAST:event_jButtonResetActionPerformed
 
     class Worker extends Thread {
 

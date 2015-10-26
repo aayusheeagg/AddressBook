@@ -36,6 +36,34 @@ public class DBManager {
         return list;
     }
 
+    public static boolean registeruser(String Username1,String LoginId1, String Passwd1) {
+        
+        try {
+            Connection con = DriverManager.getConnection(DBUrl, DBUser, DBPassword);
+            PreparedStatement st = con.prepareStatement("Select * from login");
+            ResultSet rs = st.executeQuery();
+            String LoginId2,Username2;
+            while (rs.next()) {
+                LoginId2=rs.getString(1);
+                Username2=rs.getString(3);
+            if(Username2.equals(Username1) && LoginId2.equals(LoginId1))
+            {
+                return false;
+            }
+            }
+            
+            PreparedStatement stt = con.prepareStatement("insert into login values(?,password(?),?)");
+            stt.setString(1, LoginId1);
+            stt.setString(2, Passwd1);
+            stt.setString(3, Username1);
+            stt.executeUpdate();
+            con.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        return true;
+       
+    }
     public static LoginInfo loginuser(String ContactId, String Passwd) {
         LoginInfo info = null;
         try {

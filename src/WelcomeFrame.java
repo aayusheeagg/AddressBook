@@ -38,9 +38,11 @@ public class WelcomeFrame extends javax.swing.JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu4 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        mnuRegister = new javax.swing.JMenuItem();
         mnuLogin = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnuAdd = new javax.swing.JMenuItem();
@@ -49,6 +51,8 @@ public class WelcomeFrame extends javax.swing.JFrame implements ActionListener {
         Logoutbtn = new javax.swing.JMenu();
         mnupass = new javax.swing.JMenuItem();
         mnuLogout = new javax.swing.JMenuItem();
+
+        jMenu4.setText("jMenu4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +70,14 @@ public class WelcomeFrame extends javax.swing.JFrame implements ActionListener {
         jMenu1.setMnemonic('S');
         jMenu1.setText("Login");
         jMenu1.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+
+        mnuRegister.setText("Register");
+        mnuRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuRegisterActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuRegister);
 
         mnuLogin.setMnemonic('S');
         mnuLogin.setText("Login to your profile");
@@ -138,16 +150,22 @@ public class WelcomeFrame extends javax.swing.JFrame implements ActionListener {
 
     }//GEN-LAST:event_mnuLogoutActionPerformed
 
+    private void mnuRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuRegisterActionPerformed
+        Register f = new Register();
+            jDesktopPane1.add(f);
+            f.setVisible(true);
+    }//GEN-LAST:event_mnuRegisterActionPerformed
+
     public void update(String newname) {
         UpdateContact uc = new UpdateContact(newname);
         jDesktopPane1.add(uc);
-        uc.setVisible(true);
+       uc.setVisible(true);
     }
 
     public void fullInfo(String newname) {
         ViewFullInfo vi = new ViewFullInfo(newname);
-        jDesktopPane1.add(vi);
-        vi.setVisible(true);
+       jDesktopPane1.add(vi);
+       vi.setVisible(true);
     }
 
     public static void main(String args[]) {
@@ -187,17 +205,19 @@ public class WelcomeFrame extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem mnuAdd;
     private javax.swing.JMenuItem mnuEdit;
     private javax.swing.JMenuItem mnuLogin;
     private javax.swing.JMenuItem mnuLogout;
+    private javax.swing.JMenuItem mnuRegister;
     private javax.swing.JMenuItem mnupass;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        if (evt.getSource() == mnuLogin) {
+         if (evt.getSource() == mnuLogin) {
             LoginFrame f = new LoginFrame(this);
             jDesktopPane1.add(f);
             f.setVisible(true);
